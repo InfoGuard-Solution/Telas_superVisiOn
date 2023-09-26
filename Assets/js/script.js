@@ -16,3 +16,15 @@ var now = new Date;
 
 
 data.innerHTML = `${mes[now.getMonth()]}, ${now.getDate()}`;
+
+
+// mudar tela 
+function mudarTela() {
+// Seleciona o elemento input
+var inputTela = document.getElementById("valorTela");
+
+var valorSelecionado = inputTela.value;
+
+window.location.href = `${valorSelecionado}.html`;
+
+}
