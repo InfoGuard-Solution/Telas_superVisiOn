@@ -16,7 +16,6 @@ let dadosTemp = {
     }]
 };
 
-
 const configTemp = {
     type: 'bar',
     data: dadosTemp,
@@ -56,11 +55,10 @@ const configTemp = {
 
 const ctxTemp = document.getElementById('barTemp').getContext('2d');
 ctxTemp.canvas.width = 200;
-ctxTemp.canvas.height = 120;
+ctxTemp.canvas.height = 200;
 new Chart(document.getElementById('barTemp').getContext('2d'),
     configTemp
 );
-
 
 // chart de barras frequência
 let dadosFreq = {
@@ -79,7 +77,6 @@ let dadosFreq = {
         borderColor: 'white',
     }]
 };
-
 
 const configFreq = {
     type: 'bar',
@@ -120,7 +117,7 @@ const configFreq = {
 
 const ctxFreq = document.getElementById('barFreq').getContext('2d');
 ctxFreq.canvas.width = 200;
-ctxFreq.canvas.height = 120;
+ctxFreq.canvas.height = 200;
 new Chart(document.getElementById('barFreq').getContext('2d'),
     configFreq
 );
@@ -134,7 +131,7 @@ const dataRede = {
         data: [65, 59, 80, 81, 56, 55, 40],
         fill: false,
         backgroundColor: ['black'],
-        borderColor: ['#89cff0'],
+        borderColor: ['#ffcc00'],
         tension: 0.1
     },
     {
@@ -142,7 +139,7 @@ const dataRede = {
         data: [0, 1, 2, 5, 0, 1, 2],
         fill: false,
         backgroundColor: ['black'],
-        borderColor: ['#ffcc00'],
+        borderColor: ['#89cff0'],
         tension: 0.1
     }]
 };
@@ -178,7 +175,7 @@ const configRede = {
                     }
                 }
             }, ticks: {
-                color: '#ff7782'
+                color: '#ff7782' 
             }
         }
     }
@@ -186,46 +183,37 @@ const configRede = {
 
 const ctxRede = document.getElementById('lineRede').getContext('2d');
 ctxRede.canvas.width = 200;
-ctxRede.canvas.height = 120;
+ctxRede.canvas.height = 200;
 new Chart(document.getElementById('lineRede').getContext('2d'),
     configRede
 );
 
+// charts auxiliares
 
-// charts ocorrencia
-
-const dataOcor = {
+const dataAux = {
     labels: ["hora"],
-    datasets: [ {
-        label: 'Andamento',
+    datasets: [{
+        label: 'Disco',
         data: [3],
         backgroundColor: [
-            'rgba(255, 159, 64)',
+            '#ffcc00'
         ],
         borderColor: ['black'],
         tension: 0.1
     }, {
-        label: 'Aberto',
+        label: 'ram',
         data: [3],
         backgroundColor: [
-            'rgba(255, 205, 86)',
+            '#89cff0'
         ],
         borderColor: ['black'],
         tension: 0.1
-    }, {
-        label: 'Concluído',
-        data: [3],
-        backgroundColor: [
-            'rgba(75, 192, 192)',
-        ],
-        borderColor: ['black'],
-        tension: 0.1
-    },]
+    }]
 };
 
-const configOcor = {
+const configAux = {
     type: 'bar',
-    data: dataOcor,
+    data: dataAux,
     options: {
         scales: {
             y: {
@@ -235,7 +223,7 @@ const configOcor = {
         plugins: {
             title: {
                 display: true,
-                text: 'Ocorrência',
+                text: 'auxiliares',
                 color: '#ffcc00',
                 font: {
                     size: 16,
@@ -260,9 +248,18 @@ const configOcor = {
     }
 };
 
-const ctxOco = document.getElementById('barOco').getContext('2d');
+const ctxOco = document.getElementById('barAux').getContext('2d');
 ctxOco.canvas.width = 200;
-ctxOco.canvas.height = 120;
-new Chart(document.getElementById('barOco').getContext('2d'),
-    configOcor
+ctxOco.canvas.height = 200;
+new Chart(document.getElementById('barAux').getContext('2d'),
+configAux
 );
+
+//  ----------------------  mudar computador
+var pc1 = document.getElementById('selectEquipe1');
+
+pc1.addEventListener("click", function () {
+    var mostrarPc = document.getElementById('pc');
+
+    mostrarPc.innerHTML = pc1.value;
+});
