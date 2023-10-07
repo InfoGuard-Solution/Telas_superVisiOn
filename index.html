@@ -35,9 +35,8 @@
             <option value="Tela inicial"></option>
             <option value="computadores"></option>
             <option value="Chamados"></option>
-            <a href="style.css">
-              <option value="Usuário"></option>
-            </a>
+            <option value="Usuário"></option>
+            <option value="Relatório"></option>
           </datalist>
         </div>
       </div>
@@ -69,11 +68,14 @@
             screen_search_desktop
           </span>
         </a>
-        <a href="" class="app-sidebar-link">
+        <a href="./telas/relatorio.html" class="app-sidebar-link">
           <span class="material-symbols-outlined">
-
             quick_reference
-
+          </span>
+        </a>
+        <a href="./telas/chamados.html" class="app-sidebar-link">
+          <span class="material-symbols-outlined">
+            support_agent
           </span>
         </a>
       </div>
@@ -116,7 +118,9 @@
           </div>
           <div class="messages">
             <div class="message-box">
-              <img src="./Assets/images/user.png" alt="profile image">
+              <span class="material-symbols-outlined">
+                devices
+              </span>
               <div class="message-content">
                 <div class="message-header">
                   <div class="name">USER </div>
@@ -135,7 +139,9 @@
 
           <div class="messages">
             <div class="message-box">
-              <img src="./Assets/images/user.png" alt="profile image">
+              <span class="material-symbols-outlined">
+                devices
+              </span>
               <div class="message-content">
                 <div class="message-header">
                   <div class="name">USER </div>
@@ -154,7 +160,9 @@
 
           <div class="messages">
             <div class="message-box">
-              <img src="./Assets/images/user.png" alt="profile image">
+              <span class="material-symbols-outlined">
+                devices
+              </span>
               <div class="message-content">
                 <div class="message-header">
                   <div class="name">USER </div>
@@ -173,7 +181,9 @@
 
           <div class="messages">
             <div class="message-box">
-              <img src="./Assets/images/user.png" alt="profile image">
+              <span class="material-symbols-outlined">
+                devices
+              </span>
               <div class="message-content">
                 <div class="message-header">
                   <div class="name">USER </div>
@@ -221,6 +231,15 @@
     switch (inputTela.value.toLowerCase()) {
       case "tela inicial":
         window.location.href = `./index.html`;
+        break;
+
+      case "chamados":
+        window.location.href = `./telas/chamados.html`;
+        break;
+
+      case "relatório":
+      case "relatorio":
+        window.location.href = `./telas/relatorio.html`;
         break;
 
       case "desktops":
